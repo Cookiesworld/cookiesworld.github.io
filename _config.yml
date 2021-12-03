@@ -28,7 +28,7 @@ twitter_username: cookiesworld
 github_username:  cookiesworld
 
 # Build settings
-theme: minima
+theme: jekyll-theme-modernist
 plugins:
   - jekyll-feed
 
