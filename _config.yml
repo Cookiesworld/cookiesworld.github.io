@@ -28,7 +28,7 @@ twitter_username: cookiesworld
 github_username:  cookiesworld
 
 # Build settings
-theme: jekyll-theme-minimal
+theme: jekyll-theme-basically-basic
 plugins:
   - jekyll-feed
 
