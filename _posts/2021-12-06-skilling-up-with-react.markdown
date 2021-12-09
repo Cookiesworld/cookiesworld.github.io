@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Adding a custom domain to my portfolio"
+title: "Skilling up in react with Pluralsight"
 date: 2021-12-06 11:40:55 +0000
 categories: personal
 ---
