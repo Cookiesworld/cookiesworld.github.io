@@ -5,7 +5,8 @@ date: 2021-12-22 14:34:55 +0000
 categories: powershell
 ---
 
-Today I had to dip into Powershell for some deployment schannanigens. We have a script that formats hostname. It is passed a comma separated list of hosts which formats them into deployment hostnames and calls docker. For some reason if it were passed a single hostname we see an error "Cannot process arugment transformation on parameter 'HostNames' cannot convert the value of type System.String to type System.Collection.ArrayList.
+Today I had to dip into Powershell for some deployment schannanigens. We have a script that formats hostname. It is passed a comma separated list of hosts which formats them into deployment hostnames and calls docker. For some reason if it were passed a single hostname we see an error 
+>"Cannot process arugment transformation on parameter 'HostNames' cannot convert the value of type System.String to type System.Collection.ArrayList".
 
 Below is a simplified version which displays the error
 
@@ -40,9 +41,7 @@ $names.GetType()
 Write-Output($names)
 ```
 
-I dont normally write powershell so I am far from an expert but after some digging I found [this](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.2#return-an-array).
-
-Powershell enumerates lists on return by default so a single entry ends up being recast to a string rather than an array. The fix is to add a , on the return to explicitly tell powershell not to enumerate e.g;
+I dont normally write powershell so I am far from an expert but after some digging I found [this](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-arrays?view=powershell-7.2#return-an-array). By default Powershell enumerates lists on return. Therefore a single entry ends up being recast to a string rather than an array, even though we explicitly set this inside the function. The fix is to add a , on the return to explicitly tell powershell not to enumerate e.g;
 
 ```
 function Get-HostNames {
