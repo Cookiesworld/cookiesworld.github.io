@@ -21,7 +21,7 @@ function Get-HostNames {
     [System.Collections.ArrayList]$hostNames = @()
     Foreach($id in $instanceArray) {
         $hostId = $id.PadLeft(2, '0')
-        $hostName = "app$(hostId).example.org"
+        $hostName = "app($hostId).example.org"
         [void]$hostNames.Add($hostName)
     }
 
@@ -59,7 +59,7 @@ function Get-HostNames {
     [System.Collections.ArrayList]$hostNames = @()
     Foreach($id in $instanceArray) {
         $hostId = $id.PadLeft(2, '0')
-        $hostName = "app$(hostId).example.org"
+        $hostName = "app($hostId).example.org"
         [void]$hostNames.Add($hostName)
     }
 
