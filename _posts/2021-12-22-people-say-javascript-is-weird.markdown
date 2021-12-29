@@ -28,6 +28,11 @@ function Get-HostNames {
     return $hostNames;
 }
 
+function Get-XX {
+    $hostnames = Get-HostNames -instanceList = "devweu"
+    Get-YY -hostNames $hostnames
+}
+
 function Get-YY {
     Param(
         [System.Collections.ArrayList]$hostNames
@@ -59,6 +64,11 @@ function Get-HostNames {
     }
 
     return ,$hostNames;
+}
+
+function Get-XX {
+    $hostnames = Get-HostNames -instanceList = "devweu"
+    Get-YY -hostNames $hostnames
 }
 
 function Get-YY {
