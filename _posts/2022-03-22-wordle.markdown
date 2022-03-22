@@ -1,0 +1,26 @@
+---
+layout: post
+title: "Wordle helper"
+date: 2022-03-22 17:07:55 +0000
+categories: personal
+toc: true
+---
+I decided to try and improve my react skills by creating a small single page application to help solve [wordle puzzles](https://www.nytimes.com/games/wordle/index.html). If you dont know what wordle is a game where you get 6 guesses to get todays word. Each guess shows you letters in the correct word.
+
+The first versoin of my solution doesnt allow the position but allows entry of correct and incorrect letters whittling down the available words. 
+
+I started by looking at the source code of the wordle. There are two arrays of words, one is know words the other is real wordle words, the list had 2315 words (though New York times has since removed some).
+
+I saved the list as a json file and used [create react app](https://reactjs.org/docs/create-a-new-react-app.html) to make a blank react application. 
+
+Next I created a context to hold the list of available words.
+
+```
+npx create-react-app wordle-solver
+```
+
+The source code is available on my [github](https://github.com/Cookiesworld/wordle-solver) and the solver is deployed to [azure](https://wh.azurewebsites.net).
+
+I used a github action to create a ci pipline which automatically publishes the image whever the code is updated.
+
+Next steps are to add the positional aspect, and add some unit tests to the solution and ci pipeline.
