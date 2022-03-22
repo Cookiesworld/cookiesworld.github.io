@@ -19,6 +19,10 @@ Next I created a context to hold the list of available words.
 npx create-react-app wordle-solver
 ```
 
+Next I added a context wordsContext.js which initialised the word list from the json. To this I created a wordsReducer.js reducer which enabled filtering based on letters inputted.
+
+Then I added a sime form with two inputs for valid letters and invalid letter to exclude. On input the letter sets are dispatched and filtered by the reducer.
+
 The source code is available on my [github](https://github.com/Cookiesworld/wordle-solver) and the solver is deployed to [azure](https://wh.azurewebsites.net).
 
 I used a github action to create a ci pipline which automatically publishes the image whever the code is updated.
