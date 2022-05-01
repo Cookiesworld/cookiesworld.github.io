@@ -1,0 +1,8 @@
+---
+layout: post
+title: "AZ900"
+date: 2022-04-03 11:07:55 +0000
+categories: personal
+toc: false
+---
+Passed my first [Microsoft certification](https://www.credly.com/badges/51f36f36-bd48-4a98-880e-58dea8d45e74) today. Azure AZ-900 testing knowledge of the Azure Cloud 
