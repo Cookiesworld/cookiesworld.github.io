@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Code Kata Example"
-date: 2022-07-03 20:07:55 +0000
+date: 2022-07-03 19:07:55 +0000
 categories: personal
 toc: false
 ---
-It has been a long time since I last did a [code kata](http://codekata.com). So long that it made me jump when I stumbled across an old code kata project while searching for something on the hard drive of my old pc. This particiular project was an attempt to produce an integer to Roman Numeral converter. Originally writen in .Net Framework 4.5 a simple class with a convert method and a sereis of tests using MS Test.
+It has been a long time since I last did a [code kata](http://codekata.com). So long that it made me jump when I stumbled across an a older project while searching for something on the hard drive of my previous pc. This particiular project was an attempt to produce an integer to Roman Numeral converter. Originally writen in .Net Framework 4.5. A single class with a convert method. Then a second project with a sereis of tests using MS Test.
 
-First thing first I put committed the entire project to github rather than just living on my hard disk. 
+First thing first I put committed the entire project to [github](https://github.com/Cookiesworld/RomanNumeralsKata) rather than just living on my hard disk. 
 
 Next up I upgraded the project to .net 5.0 (I would have used 6 but I only have Visual Studio 2019 installed on this computer). 
 To do this I did the following.
@@ -20,7 +20,8 @@ dotnet new xUnit -n RomanNumerals.Test --force
 ```
 This created new project files over the top of the old ones.
 
-3. Convert the MS Test Tests into one xUnit facts. This enabled me to replace a series of test into one theory with inline data infintately more readable!
-4. Add a github action to build the project and run the tests on commits to master.
+3. Refactor the project so that the conversion is an extention method rather than having to create an instance of the class.
+4. Convert the MS Test Tests into one xUnit facts. This enabled me to replace a series of test into one theory with inline data infintately more readable!
+5. Add a github action to build the project and run the tests on commits to master.
 
 You can take a look at the [finished article here](https://github.com/Cookiesworld/RomanNumeralsKata)
