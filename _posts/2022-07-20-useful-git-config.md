@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Useful git config"
-date: 2022-07-20 18:51:55 +0000
+date: 2022-07-20 17:51:55 +0000
 categories: git
 toc: false
 ---
