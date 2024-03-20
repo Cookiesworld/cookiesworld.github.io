@@ -29,9 +29,9 @@ The requirements for Wildflow were therefore chosen to be :
 
 ## Technology
 
-Due to the limited amount of time and money for development, I chose to use a Rapid Appication Developmet tool, as this would quickly facilitate a solution to the Horticultural Societies requirments.
+Due to the limited amount of time and money for development, I chose to use a Rapid Application Development tool, as this would quickly facilitate a solution to the Horticultural Societies requirements.
 
-Microsoft Visual Basic was chosen as the technology to create the user interface. Reports were created using Crystal Reports reporting tools, this enabled high quality presentaition of information fromthe database system.
+Microsoft Visual Basic was chosen as the technology to create the user interface. Reports were created using Crystal Reports reporting tools, this enabled high quality presentation of information from the database system.
 			
 ![Screen Shot of Main Menu](/assets/images/wildflower/mainmenu.jpg)
 ![Screen shot of Pre Show Options](/assets/images/wildflower/preshowtasks.jpg)
