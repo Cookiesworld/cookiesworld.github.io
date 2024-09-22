@@ -5,7 +5,7 @@ date: 2022-05-01 11:07:55 +0000
 categories: personal
 toc: false
 ---
-I updated my [wordle helper](https://wh.azurewebsites.net) to add in the ability to select known letters at position elements. Using indexOf to test if the letter is contained at that position.
+I updated my [wordle helper](https://wh.johncooke.info) to add in the ability to select known letters at position elements. Using indexOf to test if the letter is contained at that position.
 
 I also added [application insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview) which will allow me to track errors via the application error boundary checking. It also give insights into sessions and users. On first use on the deployed version the event tracking failed. What I soon realised is that though locally I had the application insights key the deployed version did not.
 
