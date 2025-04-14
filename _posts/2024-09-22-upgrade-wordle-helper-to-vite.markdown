@@ -15,9 +15,9 @@ To start with I ran the
 npm create vite@latest . -- --template react
 ```
 
-I chose to ignore files and continue, thie replaced my exsting package.conf. I had to rejig some of the structure, index.html moves from the public folder to the root. 
+I chose to ignore files and continue, this replaced my existing package.conf. I had to rejig some of the structure, index.html moves from the public folder to the root. 
 
-VITE doesnt directly expose process.env and only imports environment variables which are prefixed with VITE. A quick find and replace later.
+VITE doesn't directly expose process.env and only imports environment variables which are prefixed with VITE. A quick find and replace later.
 
 I am really impressed how fast VITE starts up.
 
