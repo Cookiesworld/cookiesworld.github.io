@@ -31,7 +31,7 @@ Next, I ran ```vgdisplay``` to check the volume group (VG) that /dev/sda5 belong
 
 #### Free Up Space.
 
-Since my physical volume  had no free extents, I needed to make room. I decided to shrink one of the logical volumes (LVs) in the VG. If your filesystem supports shrinking (like ext4), you can reduce an LV’s size to free up PEs. Here’s an example reducing by 50G:
+Since my physical volume  had no free extents, I needed to make room. I decided to shrink one of the logical volumes (LVs) in the VG. If your filesystem supports shrinking (like ext4), you can reduce an LV’s size to free up PEs. **Warning check that your filesystem supports resizing and always backup data!** Here’s an example reducing by 50G:
 
 ```resize2fs /dev/vgname/lvname 50G```<br>
 ```lvreduce -L 50G /dev/vgname/lvname```
@@ -40,7 +40,10 @@ _Note: Replace vgname and lvname with your actual VG and LV names, and adjust th
 
 #### Create the RAID Mirror
 
-With free PEs available, I retried creating the RAID mirror, and it worked like a charm:lvcreate --type raid1 -m 1 -L 100G -n mirror ```lv vgname ```
+With free PEs available, I retried creating the RAID mirror, and it worked like a charm:
+
+```lvcreate --type raid1 -m 1 -L 100G -n mirror``` <br>
+```lv vgname ```
 
 #### Verify Everything
 
@@ -52,14 +55,18 @@ If you can’t shrink an LV, here are a couple of other options:
 
 * Add a New PV: Extend your VG by adding another disk or partition as a PV:
 
-```pvcreate /dev/sdX```<br>
-```vgextend vgname /dev/sdX```
+    ```pvcreate /dev/sdX```<br>
+    ```vgextend vgname /dev/sdX```
  
-* Remove Unused LVs: If you have unnecessary LVs, delete them to reclaim space: ```lvremove /dev/vgname/lvname```
-* 
+* Remove Unused LVs: If you have unnecessary LVs, delete them to reclaim space: 
+ 
+    ```lvremove /dev/vgname/lvname```
+  
 
 ## Pro Tip
-Always double-check your PVs for errors with pvck if things aren’t working as expected:
+Always double-check your PVs for errors with [pvck](https://man7.org/linux/man-pages/man8/pvck.8.html) if things aren’t working as expected:
+
 ```pvck /dev/sda5```
 
+## Wrapping up
 Running out of physical extents can be a problem, with a bit of investigation and the right commands a solvable one. For me, shrinking an LV did the trick, but your setup might need a different approach. 
