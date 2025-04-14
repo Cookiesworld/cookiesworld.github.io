@@ -27,6 +27,9 @@ url: "https://blog.cookiesworld.co.uk" # the base hostname & protocol for your s
 twitter_username: cookiesworld
 github_username:  cookiesworld
 linkedin_username: jdcooke
+mastodon:
+- username: Cookiesworld
+  instance: mstdn.party
 
 # Build settings
 #theme: jekyll-theme-basically-basic
