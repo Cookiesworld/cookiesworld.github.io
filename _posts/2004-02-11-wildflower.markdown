@@ -10,13 +10,13 @@ toc: true
 
 Wildflower was developed for Wilmslow and Alderley Edge Horticultural Society in 2002. The systems helps to manage the show. Recording the entrants, producing labels for each of the entires, recording the winners totalling prize money and producing a press report. The society has successfully used Wildflower for the 2002 and 2003 shows.
 
-## Requirments
+## Requirements
 
-The Horticultural Society wanted to replace their existing ms-dos system [flower show] with a modern Windows Program. The new program had to have the same functionality as the old system with the ability to operate within Windows and with a modern printer (the flowershow system only worked with a line printer.
+The Horticultural Society wanted to replace their existing ms-dos system [flower show] with a modern Windows Program. The new program had to have the same functionality as the old system with the ability to operate within Windows and with a modern printer (the flower show system only worked with a line printer.
 
-The flowershow system recorded entrants, produced show label for each entrant, helds details of all the classes and sections including prizes and code. The system also recorded details of winners (First Second and Third Place), it then produced reports of winners, calculated prize totals and outputted a press report.
+The flower show system recorded entrants, produced show label for each entrant, held details of all the classes and sections including prizes and code. The system also recorded details of winners (First Second and Third Place), it then produced reports of winners, calculated prize totals and outputted a press report.
 
-The requirements for Wildflow were therefore chosen to be :
+The requirements for Wildflower were therefore chosen to be :
 
 * Store Details of Entry Classes and Sections
 * Store Entrant Details (Name, Address, Telephone, Sections Entered)
