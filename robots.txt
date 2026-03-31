@@ -4,5 +4,14 @@ Disallow: /
 User-agent: ClaudeBot
 Disallow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot-User
+Allow: /
+
+User-agent:Claude-SearchBot
+Allow: /
+
 User-agent: *
 Allow: /
