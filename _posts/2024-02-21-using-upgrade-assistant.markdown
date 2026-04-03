@@ -4,6 +4,7 @@ title: "Saving time with the upgrade assistant"
 date: 2024-02-21 16:30:55 +0000
 categories: dotnet
 toc: true
+excerpt: "Trying out the dotnet upgrade assistant"
 ---
 
 # Saving time with the upgrade assistant

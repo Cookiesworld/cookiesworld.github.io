@@ -4,6 +4,7 @@ title: "Professional Scrum Master PSM I"
 date: 2025-04-12 11:17:55 +0000
 categories: personal
 toc: false
+excerpt: "I recently passed the PSM I certification from Scrum.org. Here's how I prepared, what the exam was like, and what I'm taking back to my team."
 ---
 
 # Professional Scrum Master PSM I certificate

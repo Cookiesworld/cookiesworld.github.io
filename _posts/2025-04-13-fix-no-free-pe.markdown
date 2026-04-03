@@ -4,6 +4,7 @@ title: "How to Fix \"No Free PE\" When Creating an LVM RAID Mirror"
 date: 2025-04-13 11:17:55 +0000
 categories: personal
 toc: false
+excerpt: "Hit the \"No Free PE\" error when setting up an LVM RAID mirror? Here's a step-by-step walkthrough of how I diagnosed and fixed it on my Linux system."
 ---
 
 # How to Fix \"No Free PE\" When Creating an LVM RAID Mirror

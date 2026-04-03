@@ -4,6 +4,7 @@ title: "Performance tuning with react scan and million lint"
 date: 2024-12-10 11:17:55 +0000
 categories: personal
 toc: false
+excerpt: "I recently saw an application call react scan on twitter, so I decided to run it on my wordle solver to see what performance enhancements it suggests."
 ---
 
 # Performance tuning with react scan and million lint
