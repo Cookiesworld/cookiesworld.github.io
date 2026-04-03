@@ -4,6 +4,7 @@ title: "We built a system to scale to thousands. It onboarded two users."
 date: 2026-04-03 12:30:00 +0000
 categories: Software
 toc: false
+excerpt: "We built a system capable of serving thousands of clients. Six months after go-live, I was asked to decommission it."
 ---
 
  I have been ruminating a lot on a project I worked on some years ago. The company had come up with a new formula for financial products which they thought would sell. There was a new portal on what was then cutting edge servers capable of serving many thousands of clients. 
