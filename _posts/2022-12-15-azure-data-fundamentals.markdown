@@ -4,6 +4,7 @@ title: "Azure data fundamentals"
 date: 2022-12-15 17:51:55 +0000
 categories: personal
 toc: false
+excerpt: "I took and passed the Azure data fundamentals exam."
 ---
 
 # Azure data fundamentals

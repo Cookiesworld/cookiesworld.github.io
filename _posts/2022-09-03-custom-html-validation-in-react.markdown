@@ -4,6 +4,7 @@ title: "Leverage custom html validation in react forms"
 date: 2022-09-03 14:51:55 +0000
 categories: git
 toc: false
+excerpt: "Leverage custom html validation in react forms, using HTML5 inbuilt validation."
 ---
 
 # Leverage custom html validation in react forms
