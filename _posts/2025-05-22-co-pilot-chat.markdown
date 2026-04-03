@@ -4,6 +4,7 @@ title: "My VS Code Copilot Chat Revelation: Agent Mode is a Game-Changer!"
 date: 2025-05-22 07:50:55 +0000
 categories: personal
 toc: false
+excerpt: "I've been using GitHub Copilot for code suggestions for a while, but Agent Mode changed how I think about AI-assisted development. Here's what happened when I let it loose on a real task."
 ---
 
 # My VS Code Copilot Chat Revelation: Agent Mode is a Game-Changer!

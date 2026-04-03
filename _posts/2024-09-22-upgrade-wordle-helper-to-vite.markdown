@@ -4,6 +4,7 @@ title: "Upgrade wordle helper to vite"
 date: 2024-09-24 11:07:55 +0000
 categories: personal
 toc: false
+excerpt: "I created an application to help me solve wordl puzzles"
 ---
 # The app
 I created an application to help me solve wordl puzzles [wordle helper](https://wh.johncooke.info). I originally created it using create react app, which is unfortunately now not supported. There are several security issues flagged by dependabot so I needed to update to something. The source is on [github](https://github.com/Cookiesworld/wordle-solver/commit/6bed2b83e0927815ef6fd1d833e2e090c75038b6#diff-a32a0887ed9d1d707bbb3b845b7df7fd40e673c47e7b60a3ebd896b68d3b8839R36)
