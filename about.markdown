@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 My name is John Cooke, aka Cookiesworld. I’m a senior software developer based in Manchester, UK, with experience across .NET, Azure, and React. Primarily in the financial services sector.
-I’m currently undertaking a Master’s programme in Technical and Digital Leadership through QA, as part of my progression toward principal engineer level.
+I’m currently undertaking an MSc Digital and Technology Specialist Level 7 degree apprenticeship (Software Engineering pathway) through QA and Northumbria University, as part of my progression toward principal engineer level, with three modules down so far. Alongside that, I recently passed Microsoft Certified: Azure Developer Associate (AZ-204), which turned out to also unlock Microsoft Certified: DevOps Engineer Expert (AZ-400) since the last prerequisite had quietly been in place already.
 This blog is where I write about software development, certifications, tools I’m tinkering with, and occasional reflections on engineering and leadership.
 You can find me on LinkedIn, GitHub, or drop me a line at [here](mailto:site@cookiesworld.co.uk).
 
