@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "673 to Pass: The AZ-204 Retake, and an Unexpected Expert Cert"
 date: 2026-07-31
 tags: [azure, certification, career, dotnet]
