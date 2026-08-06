@@ -39,6 +39,13 @@ show_excerpts: true
 plugins:
   - jekyll-feed
 
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
 sass:
   style: compressed # possible values: nested expanded compact compressed
 

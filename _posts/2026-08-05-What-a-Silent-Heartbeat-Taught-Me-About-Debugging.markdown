@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "What a Silent Heartbeat Taught Me About Debugging"
 date: 2026-08-05
 tags: [ai, debugging, openclaw, homelab]
