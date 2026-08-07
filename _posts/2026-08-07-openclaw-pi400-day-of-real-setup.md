@@ -44,7 +44,7 @@ ollama pull nomic-embed-text   # 274MB
 openclaw memory index --force --agent host-executor
 ```
 
-Result: `29/29 files · 81 chunks · 768-dim vectors · vector store ready`. Fully local, zero API cost, and it works even if every cloud provider is down.
+Result: ` 29/29 files · 81 chunks → 30/30 files · 83 chunks.`. Fully local, zero API cost, and it works even if every cloud provider is down.
 
 ## 3. Hardening: fallbacks and security warnings
 
@@ -61,19 +61,53 @@ Two things I learned the hard way.
 }
 ```
 
+The intervalMinutes is a safety net, not the primary mechanism — OpenClaw already watches memory files and re-indexes on change. The hourly sync just catches anything the watcher misses. No need to cargo-cult a cron job for this.
+
 **Security warnings are worth reading.** OpenClaw flagged: "heartbeat delivery is configured while `agents.defaults.heartbeat.directPolicy` is unset." Translation: heartbeats could DM me, silently allowed by default. One line fixes it — explicitly block direct delivery until I actually want proactive pings:
 
 ```json
 "heartbeat": {
-  "model": "deepseek/deepseek-v4-flash",
+  "model": "ollama/llama3.2:1b",
   "target": "last",
   "directPolicy": "block"
 }
 ```
 
+The model was moved from deepseek to local Ollama later in the day — section 4.
+
+## 4. The silent money leak
+
+Local embeddings were free, so I got greedy: I moved the heartbeat model onto local Ollama too (ollama/llama3.2:1b). Heartbeats are trivial — "reply HEARTBEAT_OK or raise an alert". A 1B model is overkill, and it costs nothing to run. Perfect, right?
+
+The first heartbeat after the switch timed out. What happened:
+
+LLM idle timeout (120s): no response from model → status 408
+→ fallback to deepseek → candidate_succeeded
+
+Look closely at that last line. The fallback worked — and that was the problem. My fallback chain quietly stepped in and ran the heartbeat on paid deepseek instead. I'd moved to local models to stop spending money, and the safety net I'd built was spending it for me without a peep.
+
+The root cause was the hardware. It's a Pi 400 — 4GB of RAM, and mine sits at 44Mi free. Cold-loading a 1.5GB model into a starved box takes a while (my worst measured cold start: ~40s+), and OpenClaw's model idle watchdog is capped at 120 seconds by default. Cold start blew straight past it.
+
+The fix is one config block that extends the watchdog for the local provider:
+
+```json
+"models": {
+  "providers": {
+    "ollama": {
+      "api": "ollama",
+      "timeoutSeconds": 300
+    }
+  }
+}
+```
+
+Two and a half minutes of headroom for a cold load, bounded by the heartbeat's own run timeout so nothing can run away. Since then, heartbeats run free on Ollama.
+
+The lesson: fallback chains are silent spenders. A fallback that "saves" you from a down primary will happily run on the paid provider every time the free one is slow — and you won't notice until the bill does. If your goal is zero-cost, the fallback needs to be the exception, not the silent default.
+
 ## What I'd tell my past self
 
 1. **Defaults are opinions.** If you don't set a provider, OpenClaw assumes OpenAI — check your config before assuming anything is "free."
-2. **Local-first beats cheap-cloud.** The Pi runs Ollama embeddings happily and the memory index doesn't care.
+2. **Local-first beats cheap-cloud.** TThe Pi runs Ollama embeddings fine, once you give local models a proper timeout budget. The memory index doesn't care.
 3. **Security warnings are config debt.** An unset policy is an implicit `allow`. Make the decision explicit — even if the decision is block everything for now.
 4. **Smoke test the whole loop.** One DM → one X post proved the architecture end-to-end in seconds.
