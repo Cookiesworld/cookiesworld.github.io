@@ -6,7 +6,7 @@ tags: [ai, debugging, openclaw, homelab]
 
 I spent about a dollar today teaching myself a lesson I already knew in theory but hadn't really felt in practice: "it's not working" is never actually the bug. It's the symptom of three or four smaller, more specific things, and you don't fix any of them by guessing.
 
-The dollar went to a Raspberry Pi 400 running [OpenClaw](https://openclaw.ai) — a self-hosted AI agent gateway that talks to me over Telegram. I wanted a lightweight local model to handle its periodic "heartbeat" checks instead of paying for a cloud model every time. Simple enough: point the heartbeat config at a small model running locally via Ollama, done.
+The dollar was spent on ai models using my Raspberry Pi 400 running [OpenClaw](https://openclaw.ai). A self-hosted AI agent gateway that talks to me over Telegram. I wanted a lightweight local model to handle its periodic "heartbeat" checks instead of paying for a cloud model every time. Simple enough: point the heartbeat config at a small model running locally via Ollama, done.
 
 It wasn't done. Here's what "not working" actually turned out to be.
 
